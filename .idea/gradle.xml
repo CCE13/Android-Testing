@@ -16,6 +16,11 @@
             <option value="$PROJECT_DIR$/jfmod" />
             <option value="$PROJECT_DIR$/launcher" />
             <option value="$PROJECT_DIR$/unityLibrary" />
+            <option value="$PROJECT_DIR$/unityLibrary/FirebaseApp.androidlib" />
+            <option value="$PROJECT_DIR$/unityLibrary/FirebaseCrashlytics.androidlib" />
+            <option value="$PROJECT_DIR$/unityLibrary/GooglePlayGamesManifest.androidlib" />
+            <option value="$PROJECT_DIR$/unityLibrary/com.voxelbusters.essentialkit.androidlib" />
+            <option value="$PROJECT_DIR$/unityLibrary/com.voxelbusters.screenrecorderkit.androidlib" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
