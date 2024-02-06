@@ -1,0 +1,13 @@
+com.mygdx.runai.android-core-1.2.0-0 C:\Users\cheam\.gradle\caches\transforms-3\3bd3c5a4376e2aff8ef9f5f5797afcc1\transformed\core-1.2.0\res
+com.mygdx.runai.android-jetified-play-services-base-18.0.1-1 C:\Users\cheam\.gradle\caches\transforms-3\458f3ae4befdb49bfd41c97818481510\transformed\jetified-play-services-base-18.0.1\res
+com.mygdx.runai.android-jetified-play-services-basement-18.1.0-2 C:\Users\cheam\.gradle\caches\transforms-3\492d256743c6874c406520d6b08e5af5\transformed\jetified-play-services-basement-18.1.0\res
+com.mygdx.runai.android-coordinatorlayout-1.0.0-3 C:\Users\cheam\.gradle\caches\transforms-3\8f06f1e8f269686483a78422ff234fee\transformed\coordinatorlayout-1.0.0\res
+com.mygdx.runai.android-jetified-firebase-common-20.3.1-4 C:\Users\cheam\.gradle\caches\transforms-3\d0ec9c1b40388d5a3c01b9a62318c9ad\transformed\jetified-firebase-common-20.3.1\res
+com.mygdx.runai.android-pngs-5 D:\Android-Testing\android\build\generated\res\pngs\debug
+com.mygdx.runai.android-resValues-6 D:\Android-Testing\android\build\generated\res\resValues\debug
+com.mygdx.runai.android-rs-7 D:\Android-Testing\android\build\generated\res\rs\debug
+com.mygdx.runai.android-mergeDebugResources-8 D:\Android-Testing\android\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.mygdx.runai.android-mergeDebugResources-9 D:\Android-Testing\android\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.mygdx.runai.android-merged_res-10 D:\Android-Testing\android\build\intermediates\merged_res\debug
+com.mygdx.runai.android-android-11 D:\Android-Testing\android\res
+com.mygdx.runai.android-debug-12 D:\Android-Testing\android\src\debug\res

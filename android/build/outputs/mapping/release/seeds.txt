@@ -1,0 +1,148 @@
+com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader
+androidx.lifecycle.SingleGeneratedAdapterObserver
+androidx.versionedparcelable.ParcelImpl
+com.google.firebase.firestore.FirestoreRegistrar
+androidx.core.app.RemoteActionCompatParcelizer
+androidx.lifecycle.ReflectiveGenericLifecycleObserver
+com.google.android.gms.common.api.Status
+com.mygdx.runai.AndroidLauncher
+com.google.android.gms.common.internal.ReflectedParcelable
+com.google.firebase.firestore.FirebaseFirestore
+com.google.firebase.components.ComponentDiscoveryService
+androidx.lifecycle.CompositeGeneratedAdaptersObserver
+androidx.annotation.Keep
+android.support.v4.app.RemoteActionCompatParcelizer
+androidx.core.app.CoreComponentFactory
+androidx.lifecycle.LiveData$LifecycleBoundObserver
+com.google.firebase.provider.FirebaseInitProvider
+com.google.android.gms.common.api.Scope
+com.google.firebase.components.ComponentRegistrar
+com.google.android.gms.common.annotation.KeepName
+com.google.android.gms.common.api.GoogleApiActivity
+androidx.core.graphics.drawable.IconCompatParcelizer
+com.google.firebase.FirebaseCommonRegistrar
+com.google.android.gms.common.api.internal.LifecycleCallback
+com.google.android.gms.common.GooglePlayServicesMissingManifestValueException
+androidx.lifecycle.FullLifecycleObserverAdapter
+androidx.core.app.RemoteActionCompat
+androidx.core.graphics.drawable.IconCompat
+com.google.firebase.concurrent.ExecutorsRegistrar
+android.support.v4.graphics.drawable.IconCompatParcelizer
+com.google.android.gms.auth.api.signin.GoogleSignInAccount
+com.google.android.gms.common.util.DynamiteApi
+com.google.android.gms.common.GooglePlayServicesIncorrectManifestValueException
+com.google.android.gms.common.GooglePlayServicesManifestException
+androidx.versionedparcelable.CustomVersionedParcelable
+com.google.android.gms.common.api.internal.BasePendingResult
+androidx.concurrent.futures.AbstractResolvableFuture$Waiter: androidx.concurrent.futures.AbstractResolvableFuture$Waiter next
+com.google.android.gms.common.internal.GetServiceRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.auth.api.signin.GoogleSignInAccount: android.os.Parcelable$Creator CREATOR
+androidx.fragment.app.FragmentState: android.os.Parcelable$Creator CREATOR
+androidx.concurrent.futures.AbstractResolvableFuture$Waiter: java.lang.Thread thread
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_CREATE
+com.google.android.gms.common.internal.zav: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.MethodInvocation: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_PAUSE
+com.google.android.gms.common.ConnectionResult: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event[] $VALUES
+androidx.concurrent.futures.AbstractResolvableFuture: java.lang.Object value
+com.google.android.gms.common.api.internal.BasePendingResult: com.google.android.gms.common.api.internal.zas mResultGuardian
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_RESUME
+com.google.android.gms.signin.internal.zak: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_START
+com.google.android.gms.common.internal.TelemetryData: android.os.Parcelable$Creator CREATOR
+androidx.versionedparcelable.ParcelImpl: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.zat: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.signin.internal.zai: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.api.Status: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.Feature: android.os.Parcelable$Creator CREATOR
+com.google.firebase.firestore.FirestoreRegistrar: java.lang.String LIBRARY_NAME
+com.google.android.gms.common.api.Scope: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.signin.internal.zaa: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_DESTROY
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_STOP
+com.google.android.gms.common.internal.RootTelemetryConfiguration: android.os.Parcelable$Creator CREATOR
+androidx.fragment.app.BackStackState: android.os.Parcelable$Creator CREATOR
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event ON_ANY
+androidx.fragment.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.zzj: android.os.Parcelable$Creator CREATOR
+androidx.concurrent.futures.AbstractResolvableFuture: androidx.concurrent.futures.AbstractResolvableFuture$Waiter waiters
+com.google.android.gms.common.internal.ConnectionTelemetryConfiguration: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader: java.lang.ClassLoader sClassLoader
+androidx.concurrent.futures.AbstractResolvableFuture: androidx.concurrent.futures.AbstractResolvableFuture$Listener listeners
+com.google.android.gms.signin.internal.zag: android.os.Parcelable$Creator CREATOR
+androidx.fragment.app.FragmentActivity$NonConfigurationInstances: FragmentActivity$NonConfigurationInstances()
+com.google.android.gms.internal.common.zzc: zzc()
+androidx.collection.SimpleArrayMap: SimpleArrayMap()
+androidx.collection.ArrayMap: ArrayMap()
+androidx.fragment.app.FragmentActivity: FragmentActivity()
+com.google.android.gms.common.api.PendingResult: PendingResult()
+androidx.fragment.app.BackStackRecord$Op: BackStackRecord$Op()
+com.google.android.gms.common.internal.zzj: zzj()
+kotlin.collections.IntIterator: IntIterator()
+com.mygdx.runai.AndroidLauncher: AndroidLauncher()
+kotlin.jvm.internal.Intrinsics: Intrinsics()
+com.google.android.gms.common.api.Api$AbstractClientBuilder: Api$AbstractClientBuilder()
+com.google.firebase.firestore.FirebaseFirestore: void setClientLanguage(java.lang.String)
+com.google.firebase.firestore.FirestoreRegistrar: java.util.List getComponents()
+androidx.concurrent.futures.AbstractResolvableFuture$Waiter: AbstractResolvableFuture$Waiter()
+com.google.android.gms.common.api.internal.zzd: zzd()
+androidx.fragment.app.FragmentTransition$FragmentContainerTransition: FragmentTransition$FragmentContainerTransition()
+androidx.core.app.CoreComponentFactory: CoreComponentFactory()
+androidx.lifecycle.ViewModelStore: ViewModelStore()
+com.google.firebase.platforminfo.GlobalLibraryVersionRegistrar: GlobalLibraryVersionRegistrar()
+android.support.v4.app.RemoteActionCompatParcelizer: RemoteActionCompatParcelizer()
+androidx.core.graphics.drawable.IconCompatParcelizer: void write(androidx.core.graphics.drawable.IconCompat,androidx.versionedparcelable.VersionedParcel)
+com.badlogic.gdx.backends.android.AndroidApplication: AndroidApplication()
+androidx.core.graphics.drawable.IconCompatParcelizer: androidx.core.graphics.drawable.IconCompat read(androidx.versionedparcelable.VersionedParcel)
+com.google.firebase.concurrent.UiExecutor: com.google.firebase.concurrent.UiExecutor valueOf(java.lang.String)
+androidx.core.app.RemoteActionCompatParcelizer: void write(androidx.core.app.RemoteActionCompat,androidx.versionedparcelable.VersionedParcel)
+androidx.concurrent.futures.AbstractResolvableFuture: AbstractResolvableFuture()
+com.google.firebase.concurrent.ExecutorsRegistrar: ExecutorsRegistrar()
+com.google.firebase.StartupTime: StartupTime()
+androidx.fragment.app.FragmentManagerState: FragmentManagerState()
+androidx.loader.app.LoaderManagerImpl$LoaderViewModel: LoaderManagerImpl$LoaderViewModel()
+com.google.android.gms.common.GooglePlayServicesMissingManifestValueException: GooglePlayServicesMissingManifestValueException()
+com.google.firebase.components.ComponentDiscoveryService: ComponentDiscoveryService()
+androidx.collection.ArraySet: ArraySet()
+io.grpc.Metadata: Metadata()
+androidx.lifecycle.Lifecycle$State: androidx.lifecycle.Lifecycle$State valueOf(java.lang.String)
+com.badlogic.gdx.utils.StringBuilder: StringBuilder()
+androidx.fragment.app.FragmentManagerImpl: FragmentManagerImpl()
+androidx.lifecycle.ViewModel: ViewModel()
+android.support.v4.app.RemoteActionCompatParcelizer: androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel)
+androidx.core.graphics.drawable.IconCompatParcelizer: IconCompatParcelizer()
+com.google.android.gms.common.api.GoogleApiActivity: GoogleApiActivity()
+androidx.fragment.app.FragmentTransitionImpl: FragmentTransitionImpl()
+androidx.versionedparcelable.CustomVersionedParcelable: CustomVersionedParcelable()
+com.google.android.gms.common.api.internal.BasePendingResult: BasePendingResult()
+androidx.collection.SparseArrayCompat: SparseArrayCompat()
+com.google.firebase.platforminfo.LibraryVersion: LibraryVersion()
+com.google.firebase.provider.FirebaseInitProvider: FirebaseInitProvider()
+android.support.v4.app.RemoteActionCompatParcelizer: void write(androidx.core.app.RemoteActionCompat,androidx.versionedparcelable.VersionedParcel)
+androidx.fragment.app.Fragment: Fragment()
+com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader: DynamiteModule$DynamiteLoaderClassLoader()
+androidx.arch.core.executor.ArchTaskExecutor: ArchTaskExecutor()
+androidx.core.app.RemoteActionCompat: RemoteActionCompat()
+android.support.v4.graphics.drawable.IconCompatParcelizer: void write(androidx.core.graphics.drawable.IconCompat,androidx.versionedparcelable.VersionedParcel)
+android.support.v4.graphics.drawable.IconCompatParcelizer: IconCompatParcelizer()
+com.google.android.gms.tasks.TaskCompletionSource: TaskCompletionSource()
+com.google.android.gms.internal.base.zac: zac()
+androidx.core.graphics.drawable.IconCompat: IconCompat()
+androidx.core.app.RemoteActionCompatParcelizer: RemoteActionCompatParcelizer()
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event valueOf(java.lang.String)
+com.google.android.gms.common.api.internal.LifecycleCallback: com.google.android.gms.common.api.internal.LifecycleFragment getChimeraLifecycleFragmentImpl(com.google.android.gms.common.api.internal.LifecycleActivity)
+com.google.android.gms.common.api.internal.zzb: zzb()
+androidx.core.app.RemoteActionCompatParcelizer: androidx.core.app.RemoteActionCompat read(androidx.versionedparcelable.VersionedParcel)
+androidx.lifecycle.Lifecycle$Event: androidx.lifecycle.Lifecycle$Event[] values()
+com.google.firebase.concurrent.UiExecutor: com.google.firebase.concurrent.UiExecutor[] values()
+com.google.firebase.firestore.FirestoreRegistrar: com.google.firebase.firestore.FirestoreMultiDbComponent lambda$getComponents$0(com.google.firebase.components.ComponentContainer)
+com.badlogic.gdx.utils.Array: Array()
+androidx.lifecycle.Lifecycle$State: androidx.lifecycle.Lifecycle$State[] values()
+com.google.firebase.firestore.FirestoreRegistrar: FirestoreRegistrar()
+com.google.android.gms.signin.internal.zaa: zaa()
+androidx.core.view.ViewCompat$UnhandledKeyEventManager: ViewCompat$UnhandledKeyEventManager()
+androidx.arch.core.internal.SafeIterableMap: SafeIterableMap()
+com.google.firebase.FirebaseCommonRegistrar: FirebaseCommonRegistrar()
+android.support.v4.graphics.drawable.IconCompatParcelizer: androidx.core.graphics.drawable.IconCompat read(androidx.versionedparcelable.VersionedParcel)
+com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable: AbstractSafeParcelable()

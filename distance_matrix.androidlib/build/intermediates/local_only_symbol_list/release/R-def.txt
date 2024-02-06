@@ -1,0 +1,37 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_cancel
+drawable ic_launch
+drawable logo
+id DistanceRan
+id Notification_Text_Header
+id Pause
+id Resume
+id TimeTaken
+id text_view_collapsed_1
+id text_view_collapsed_2
+layout notification_collapsed
+layout notification_expanded
+mipmap ic_launcher
+mipmap ic_launcher_round
+raw eighth
+raw fifth
+raw first
+raw fourth
+raw nineth
+raw rightfoot
+raw second
+raw seventh
+raw sixth
+raw tenth
+raw third
+string launch_activity
+string location_unknown
+string location_updated
+string location_updates_label
+string ok
+string permission_denied_explanation
+string permission_rationale
+string remove_location_updates
+string request_location_updates
+string settings

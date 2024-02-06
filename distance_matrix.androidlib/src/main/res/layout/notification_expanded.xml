@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/Notification_Text_Header"
+        style="@style/TextAppearance.Compat.Notification"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="#FFFFFF"
+        android:freezesText="true"
+        android:gravity="center"
+        android:text="RunAI is Tracking Your Run"
+        android:textAlignment="center"
+        android:textColor="#000214"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/DistanceRan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Distance"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TimeTaken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Duration : 00:00:00"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Pause"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:backgroundTint="#009327"
+        android:scaleX="1"
+        android:text="Pause"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/Resume"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#9A9A9A"
+        android:scaleX="1"
+        android:text="Resume"
+        tools:visibility="gone" /><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+    />
+
+
+
+
+
+
+
+]]>
+</LinearLayout>

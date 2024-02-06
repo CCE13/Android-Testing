@@ -1,0 +1,4 @@
+#Tue Feb 06 17:44:44 SGT 2024
+base.0=D\:\\Android-Testing\\android\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

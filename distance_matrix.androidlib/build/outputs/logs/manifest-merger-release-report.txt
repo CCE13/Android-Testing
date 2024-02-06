@@ -1,0 +1,109 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:2:1-50:12
+	package
+		INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:2:1-50:12
+		INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:2:11-57
+	xmlns:android
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:3:5-63
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:7:5-77
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:7:22-74
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:9:5-76
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:9:22-74
+uses-permission#android.permission.VIBRATE
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:10:5-66
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:10:22-63
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:11:5-68
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:11:22-65
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:12:5-75
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:12:22-72
+uses-permission#android.permission.ACTIVITY_RECOGNITION
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:13:5-78
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.BODY_SENSORS
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:14:5-70
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:14:22-68
+uses-feature#android.hardware.sensor.accelerometer
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:16:5-18:35
+	android:required
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:18:9-32
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:17:9-61
+uses-feature#android.hardware.sensor.stepcounter
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:19:5-21:34
+	android:required
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:21:9-32
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:20:9-59
+uses-feature#android.hardware.sensor.stepdetector
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:22:4-24:33
+	android:required
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:24:8-31
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:23:8-59
+application
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:27:5-48:19
+service#com.abk.distance.services.LocationService
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:35:9-40:44
+	android:process
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:40:13-41
+	android:enabled
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:38:13-36
+	android:foregroundServiceType
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:39:13-53
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:36:13-69
+service#com.abk.distance.chatgptscript.AiForegroundService
+ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:41:9-46:15
+	android:enabled
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:43:13-35
+	android:exported
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:44:13-36
+	android:foregroundServiceType
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:45:13-53
+	android:name
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:42:13-78
+uses-sdk
+INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+		INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+		ADDED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+		INJECTED from D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
