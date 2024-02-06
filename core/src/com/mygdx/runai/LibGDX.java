@@ -159,6 +159,7 @@ public class LibGDX extends Game implements RunAIInterface
 
 	public ArrayList<Float> RunTheAI() {
 
+		System.out.println("LibGDX running");
 		staticVoiceVolumeValue = voiceVolumeValue;
 		staticFeedbackVolumeValue = feedbackVolumeValue;
 		staticFootstepVolumeValue = footstepVolumeValue;
