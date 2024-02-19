@@ -38,12 +38,6 @@
             android:exported="true"
             android:foregroundServiceType="location"
             android:process=":different" />
-        <service
-            android:name="com.abk.distance.chatgptscript.AiForegroundService"
-            android:enabled="true"
-            android:exported="true"
-            android:foregroundServiceType="dataSync"
-            />
 
     </application>
 
