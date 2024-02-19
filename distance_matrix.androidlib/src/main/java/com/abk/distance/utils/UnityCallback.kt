@@ -10,6 +10,7 @@ class UnityCallbacks {
         const val CALLBACK_OBJ: String = "RunningPluginListener"
 
         const val onUpdatePlayerData: String = "onUpdatePlayerData"
+        const val onUpdateFinalPlayerData: String = "onUpdateFinalPlayerData"
         const val onPermissionDenied: String = "onPermissionDenied"
         const val onUpdateAIData : String = "onUpdateAIData"
         const val onUpdateAiAnalyserData : String = "onUpdateAiAnalyserData"
@@ -18,11 +19,19 @@ class UnityCallbacks {
         fun onUpdatePlayerData(data: String) {
             try {
                 UnityPlayer.UnitySendMessage(CALLBACK_OBJ, onUpdatePlayerData, data)
-                Log.e("UnityCallBacks","Sending player data")
             } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
+        @JvmStatic
+        fun onFinalUpdatePlayerData(data: String){
+            try {
+                UnityPlayer.UnitySendMessage(CALLBACK_OBJ, onUpdateFinalPlayerData, data)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
 
         @JvmStatic
         fun permissionDenied(permission: String) {
@@ -36,7 +45,6 @@ class UnityCallbacks {
         fun onUpdateAIData(data : String){
             try {
                 UnityPlayer.UnitySendMessage(CALLBACK_OBJ, onUpdateAIData, data)
-                Log.e("UnityCallBacks","Sending AI data")
             } catch (e: Exception) {
                 e.printStackTrace()
             }

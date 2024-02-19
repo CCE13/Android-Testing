@@ -11,4 +11,16 @@
     <string name="remove_location_updates">Remove location updates</string>
     <string name="request_location_updates">Request location updates</string>
     <string name="settings">Settings</string>
+    <style name="DisplayedData" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="PrefixData" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

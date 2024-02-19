@@ -17,6 +17,7 @@ import android.os.Vibrator;
 import android.util.Base64;
 import android.util.Log;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -43,8 +44,10 @@ import org.json.JSONObject;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -67,10 +70,10 @@ public class WalkingServiceBridge {
 
     private int paceMinutes;
     private int paceSeconds;
+    private String playerName;
 
     private static float voiceVolume;
     private static float footstepVolume;
-    private static float feedbackVolume;
     public WalkingServiceBridge(Activity activity)
     {
         this.activity = activity;
@@ -90,7 +93,8 @@ public class WalkingServiceBridge {
         intent.putExtra("PaceSeconds",paceSeconds);
         activity.sendBroadcast(intent);
     }
-    public void startDistanceForegroundService(float lapInterval,float distanceToTravel,String rankID) {
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    public void startDistanceForegroundService(float lapInterval, float distanceToTravel, String rankID) {
         RankID = rankID;
         competitionStopped = false;
         vibratored = false;
@@ -105,62 +109,16 @@ public class WalkingServiceBridge {
         }
         // Get instance of Vibrator from current Context
     }
-
     public void IsRunningInBackground(boolean isAppInBackground){
         Intent intent = new Intent("com.abk.distance.BACKGROUND_STATE_CHANGE");
         intent.putExtra("isInBackground",isAppInBackground);
         activity.sendBroadcast(intent);
-    }
-    public void startPacerForegroundService(float lapInterval, float distanceToTravel,int paceMin,int paceSeconds) {
-        RankID = "1";
-        competitionStopped = false;
-        vibratored = false;
-        distance = 0;
-        this.distanceToTravel = distanceToTravel;
-        mode = 1;
-
-        this.paceMinutes = paceMin;
-        this.paceSeconds = paceSeconds;
-        Log.e(TAG, "startForegroundService: called process ::: " + Process.myPid());
-        if (checkPermissions()) {
-            startAhead(lapInterval,distanceToTravel);
-        } else {
-            UnityCallbacks.permissionDenied("ACTIVITY_RECOGNITION");
-            takePermission(lapInterval,distanceToTravel);
-        }
-
-        // Get instance of Vibrator from current Context
     }
     public void stopForegroundService() {
         // Adding a 1-second delay
         competitionStopped = true;
         Intent mServiceIntent = new Intent(activity, LocationService.class);
         activity.stopService(mServiceIntent);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                destroyListener();
-
-            }
-        }, 5000);
-    }
-
-    public void UpdateVolume(float voiceVolume,float footstepsVolume,float feedbackVolume){
-        Intent intent = new Intent("com.abk.distance.Volume_State_Change");
-
-        intent.putExtra("voiceVolume", voiceVolume);
-        intent.putExtra("footstepVolume", footstepsVolume);
-        intent.putExtra("feedbackVolume", feedbackVolume);
-
-
-        activity.sendBroadcast(intent);
-    }
-    public void UpdateVolumeFirst(float voiceVolume,float footstepsVolume,float feedbackVolume){
-
-        this.voiceVolume = voiceVolume;
-        this.footstepVolume = footstepsVolume;
-        this.feedbackVolume = feedbackVolume;
-
     }
     private void takePermission(float lapInterval, float distanceToTravel) {
         Dexter.withContext(activity)
@@ -169,6 +127,7 @@ public class WalkingServiceBridge {
                         Manifest.permission.ACCESS_COARSE_LOCATION
                 )
                 .withListener(new MultiplePermissionsListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
                         if (multiplePermissionsReport.areAllPermissionsGranted()) {
@@ -206,49 +165,45 @@ public class WalkingServiceBridge {
                 activity,
                 Manifest.permission.ACCESS_COARSE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            List<String> permissionsToRequest = new ArrayList<>();
+        List<String> permissionsToRequest = new ArrayList<>();
 
-            if (!locationPermissionGranted) {
-                permissionsToRequest.add(Manifest.permission.ACCESS_FINE_LOCATION);
-            }
+        if (!locationPermissionGranted) {
+            permissionsToRequest.add(Manifest.permission.ACCESS_FINE_LOCATION);
+        }
 
-            if (!coarseLocationPermissionGranted) {
-                permissionsToRequest.add(Manifest.permission.ACCESS_COARSE_LOCATION);
-            }
+        if (!coarseLocationPermissionGranted) {
+            permissionsToRequest.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+        }
 
-            if (!permissionsToRequest.isEmpty()) {
-                activity.requestPermissions(
-                        permissionsToRequest.toArray(new String[0]),
-                        1
-                );
-            }
+        if (!permissionsToRequest.isEmpty()) {
+            activity.requestPermissions(
+                    permissionsToRequest.toArray(new String[0]),
+                    1
+            );
         }
 
         return locationPermissionGranted && coarseLocationPermissionGranted;
     }
 
-    private void startAhead(float lapInterval,float distanceToTravel) {
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    private void startAhead(float lapInterval, float distanceToTravel) {
         Intent mServiceIntent = new Intent(activity, LocationService.class);
         mServiceIntent.putExtra("lapInterval",lapInterval);
         mServiceIntent.putExtra("distanceToTravel",distanceToTravel);
-        mServiceIntent.putExtra("RankID",RankID.toString());
+        mServiceIntent.putExtra("RankID", RankID);
         mServiceIntent.putExtra("Mode", mode);
         mServiceIntent.putExtra("PaceMinute", paceMinutes);
         mServiceIntent.putExtra("PaceSecond", paceSeconds);
         mServiceIntent.putExtra("voiceVolume", voiceVolume);
         mServiceIntent.putExtra("footstepVolume", footstepVolume);
-        mServiceIntent.putExtra("feedbackVolume", feedbackVolume);
+        mServiceIntent.putExtra("Name",playerName);
 
-        System.out.println("TESTING VOLUME 2 " + this.voiceVolume + " " + this.footstepVolume + " " + this.feedbackVolume);
+        System.out.println("TESTING VOLUME 2 " + this.voiceVolume + " " + this.footstepVolume);
         RegisterReciever(distanceToTravel);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            activity.startForegroundService(mServiceIntent);
-        } else {
-            activity.startService(mServiceIntent);
-        }
+        activity.startForegroundService(mServiceIntent);
 
     }
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     public void RegisterReciever(float distanceToTravel){
         competitionStopped = false;
         this.distanceToTravel = distanceToTravel;
@@ -256,7 +211,7 @@ public class WalkingServiceBridge {
         IntentFilter filter = new IntentFilter();
         filter.addAction("action.data_update");
         filter.addCategory("action.category.distance");
-        activity.registerReceiver(playerDataReceiver, filter);
+        activity.registerReceiver(playerDataReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
     }
 
     public void destroyListener() {
@@ -306,6 +261,7 @@ public class WalkingServiceBridge {
 //        Log.e(TAG, "onReceive: called process ::: " + Process.myPid());
             //ServiceData serviceData = decompressServiceData(intent.getStringExtra("Service Data"));
             ServiceData serviceData = null;
+            boolean confirmCompetitionStopped = intent.getBooleanExtra("CompetitionStopped",false);
             File file = new File(activity.getExternalFilesDir(null), "Service Data");
             try
             {
@@ -332,12 +288,12 @@ public class WalkingServiceBridge {
             int heartRate = serviceData.getHeartrate();
 
             LappingManager lappingManager = serviceData.getLappingManager();
-            if(distance >= distanceToTravel*1000 && vibratored == false){
+            if(distance >= distanceToTravel*1000 && !vibratored){
                 NotifyThatRunHasStopped();
             }
 
             List<DataPoint> convertedData = new ArrayList<>();
-            if(competitionStopped){
+            if(competitionStopped && confirmCompetitionStopped){
                 if(lappingManager != null){
                     lappingManager.EndLapChecker(distance);
                     lappingManager.lapChecker(distance,timeSeconds);
@@ -358,7 +314,7 @@ public class WalkingServiceBridge {
             //if the competition stopped, send the location datas and mappoint datas
             // else send the simple data such as the player distance and player seconds
 
-            if(competitionStopped)
+            if(competitionStopped && confirmCompetitionStopped)
             {
                 ArrayList<MapSimulationPointData> locationDistanceData = serviceData.getLocationDistanceData();
                 ArrayList<StepDataCalculator> stepDataCalculators = serviceData.getStepCounted();
@@ -386,8 +342,21 @@ public class WalkingServiceBridge {
                     JSONObject aiDataObj = new JSONObject();
                     aiDataObj.put("AIDistanceData",aiDistanceTravelled);
                     aiDataObj.put("AITimeData",aiTime);
-                    UnityCallbacks.onUpdatePlayerData(playerDataObj.toString());
+                    UnityCallbacks.onFinalUpdatePlayerData(playerDataObj.toString());
                     UnityCallbacks.onUpdateAIData(aiDataObj.toString());
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            //For unity to check if the file has been saved
+                            try {
+                                destroyListener();
+                            }
+                            catch(Exception ignored){
+                            }
+                        }
+                    }, 5000);
+
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }

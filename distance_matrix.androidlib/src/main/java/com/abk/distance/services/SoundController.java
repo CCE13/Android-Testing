@@ -4,6 +4,7 @@ package com.abk.distance.services;
 import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
+import android.util.Log;
 
 import com.abk.gps_forground.R;
 
@@ -16,6 +17,7 @@ import com.asidik.jfmod.FmodAndroidInit;
 import com.asidik.jfmod.FmodEventDescription;
 import com.asidik.jfmod.FmodEventInstance;
 import com.asidik.jfmod.FmodStudio;
+import com.badlogic.gdx.math.Vector3;
 import com.mygdx.runai.Blackboard;
 import com.mygdx.runai.LibGDX;
 import com.mygdx.runai.SoundInterface;
@@ -108,9 +110,14 @@ public class SoundController implements SoundInterface {
         FindNearestPlayer(playerCharacter, blackboard);
     }
 
+    @Override
+    public void PlayPlacementAudio() {
+
+    }
+
 
     public void FindNearestPlayer(PlayerCharacter playerCharacter, Blackboard blackboard){
-        float volume = LibGDX.staticFootstepVolumeValue;
+        float volume = 0;
 
         if(runOnce == false){
 
@@ -212,24 +219,11 @@ public class SoundController implements SoundInterface {
         //Update FMOD
         fmodStudio.update();
     }
-    @Override
-    public void PlayPlacementAudio(){
 
-        int placement = LibGDX.playerPlacement;
-        float volume = LibGDX.staticVoiceVolumeValue;
-        if(placementSoundIds.containsKey(placement)){
-            int soundID = placementSoundIds.get(placement);
-            soundPool.play(soundID,volume,volume, 1,0,1);
-        }
-
-
-
-
-    }
 
     @Override
     public void playTTSFeedback(String text) {
-        aiTextToSpeech.playThisText(text, LibGDX.staticFeedbackVolumeValue);
+        aiTextToSpeech.playThisText(text, 0);
     }
 
     @Override

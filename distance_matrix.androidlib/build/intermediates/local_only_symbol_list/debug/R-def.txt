@@ -3,13 +3,17 @@ local
 drawable ic_cancel
 drawable ic_launch
 drawable logo
-id DistanceRan
-id Notification_Text_Header
+font poppins_bold
+id Distance_ran
+id Pace
 id Pause
 id Resume
 id TimeTaken
+id distance_prefix
+id pace_prefix
 id text_view_collapsed_1
 id text_view_collapsed_2
+id time_prefix
 layout notification_collapsed
 layout notification_expanded
 mipmap ic_launcher
@@ -35,3 +39,5 @@ string permission_rationale
 string remove_location_updates
 string request_location_updates
 string settings
+style DisplayedData
+style PrefixData

@@ -73,27 +73,17 @@ IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il
 IL2CPP_EXTERN_C RuntimeClass* DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Exception_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral083C23D42D39D2989373A8FE47D09D745F9A258B;
-IL2CPP_EXTERN_C String_t* _stringLiteral18EEAB6ABC5F8808F3FC0524640C0A2004484238;
 IL2CPP_EXTERN_C String_t* _stringLiteral239457BFC67C07AC17DAAAAA003DED06475F1A13;
-IL2CPP_EXTERN_C String_t* _stringLiteral2CB0EC158B1A71C5DF3C0905322FF559773FC968;
-IL2CPP_EXTERN_C String_t* _stringLiteral2FA3F5E0099167486F3870F8E3A9CFBCCC295402;
 IL2CPP_EXTERN_C String_t* _stringLiteral41C9906045173CAE982780E8D0AEEACDCCE40B05;
 IL2CPP_EXTERN_C String_t* _stringLiteral4722A9E0E56C08FA8D4A4CA77FCF4C16BE6EC0A8;
 IL2CPP_EXTERN_C String_t* _stringLiteral4D613657609485AE586A3379BA0E3FC13C1E1078;
-IL2CPP_EXTERN_C String_t* _stringLiteral704AF9F981943AA2565EE99B422470BDED8E570D;
-IL2CPP_EXTERN_C String_t* _stringLiteral9463E3E7C7D96D9132C320E6FCCD2C6C768BB92D;
 IL2CPP_EXTERN_C String_t* _stringLiteral9FDA3150A6BAA9876A90162CB23C39E1BBD00422;
 IL2CPP_EXTERN_C String_t* _stringLiteralA55507872ABDCE7C0A7DC544312D6B5566E79948;
-IL2CPP_EXTERN_C String_t* _stringLiteralA69ABAC8A03BF7DCFFD6C5F44AEE6E5980580880;
-IL2CPP_EXTERN_C String_t* _stringLiteralB032068F667D3E745D14ED808CE7F5A9F65AFB45;
 IL2CPP_EXTERN_C String_t* _stringLiteralBA407CB07B586E590D304D510D2E3BFBAF1BE683;
-IL2CPP_EXTERN_C String_t* _stringLiteralCB7EC7680C43B57726CCE7235C14ACE01FDD2A96;
-IL2CPP_EXTERN_C String_t* _stringLiteralCBEFD4BC368423E535ED0BD672F594BF93DEDF25;
 IL2CPP_EXTERN_C String_t* _stringLiteralCE36B7913A100A2D1EACA3945BB318B8257D76B6;
 IL2CPP_EXTERN_C String_t* _stringLiteralD2C712DD35080ACE65D49DE6104AD1FDF1E66102;
 IL2CPP_EXTERN_C String_t* _stringLiteralD4ED819345C61698F2BDC0D5CF0B148E21C0CC6C;
@@ -175,13 +165,6 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22
 {
 	// System.Boolean System.Boolean::m_value
 	bool ___m_value_0;
-};
-
-// System.Int32
-struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
-{
-	// System.Int32 System.Int32::m_value
-	int32_t ___m_value_0;
 };
 
 // System.IntPtr
@@ -454,6 +437,8 @@ struct DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields
 	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___UpdateAIData_3;
 	// System.Action`1<System.String> DistanceService::UpdatePlayerData
 	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___UpdatePlayerData_4;
+	// System.Action`1<System.String> DistanceService::UpdateFinalPlayerData
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___UpdateFinalPlayerData_5;
 };
 
 // DistanceService
@@ -481,10 +466,6 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
 };
 
 // System.Boolean
-
-// System.Int32
-
-// System.Int32
 
 // System.Single
 
@@ -588,6 +569,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00 (Delegate_t* ___0_a, Delegate_t* ___1_b, const RuntimeMethod* method) ;
 // System.Delegate System.Delegate::Remove(System.Delegate,System.Delegate)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Delegate_Remove_m8B7DD5661308FA972E23CA1CC3FC9CEB355504E3 (Delegate_t* ___0_source, Delegate_t* ___1_value, const RuntimeMethod* method) ;
+// UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Application_get_platform_m59EF7D6155D18891B24767F83F388160B1FF2138 (const RuntimeMethod* method) ;
 // System.Void DistanceService::SetupCallbacks()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_SetupCallbacks_m3E6E3EEE166E372831A54C68AAD813F81661305A (const RuntimeMethod* method) ;
 // System.Void UnityEngine.AndroidJavaObject::Call(System.String,System.Object[])
@@ -596,8 +579,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidJavaObject_Call_mDEF7846E2AB1C537
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m9E3155FB84015C823606188F53B47CB44C444991 (String_t* ___0_str0, String_t* ___1_str1, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Debug::LogError(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2 (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Debug::Log(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_obj, const RuntimeMethod* method) ;
 // System.Void UnityEngine.GameObject::.ctor()
@@ -627,6 +608,8 @@ inline ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRu
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_PauseForegroundService_m9AD21FDAA764DE699FF365EF2D92535EB4297A25 (bool ___0_paused, const RuntimeMethod* method) ;
 // System.Void System.Exception::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Exception__ctor_m9B2BD92CD68916245A75109105D9071C9D430E7F (Exception_t* __this, String_t* ___0_message, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Debug::Log(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // System.Void System.Action`1<System.String>::Invoke(T)
 inline void Action_1_Invoke_m690438AAE38F9762172E3AE0A33D0B42ACD35790_inline (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* __this, String_t* ___0_obj, const RuntimeMethod* method)
 {
@@ -819,6 +802,92 @@ IL_0006:
 		return;
 	}
 }
+// System.Void DistanceService::add_UpdateFinalPlayerData(System.Action`1<System.String>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_add_UpdateFinalPlayerData_m051D1A546616F9B705904CADEA9F49DA66A046D4 (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* V_0 = NULL;
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* V_1 = NULL;
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* V_2 = NULL;
+	{
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___UpdateFinalPlayerData_5;
+		V_0 = L_0;
+	}
+
+IL_0006:
+	{
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_1 = V_0;
+		V_1 = L_1;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_2 = V_1;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_3 = ___0_value;
+		Delegate_t* L_4;
+		L_4 = Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00(L_2, L_3, NULL);
+		V_2 = ((Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)Castclass((RuntimeObject*)L_4, Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var));
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_5 = V_2;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_6 = V_1;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_7;
+		L_7 = InterlockedCompareExchangeImpl<Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*>((&((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___UpdateFinalPlayerData_5), L_5, L_6);
+		V_0 = L_7;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_8 = V_0;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_9 = V_1;
+		if ((!(((RuntimeObject*)(Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)L_8) == ((RuntimeObject*)(Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)L_9))))
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		return;
+	}
+}
+// System.Void DistanceService::remove_UpdateFinalPlayerData(System.Action`1<System.String>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_remove_UpdateFinalPlayerData_m613BFD190987F0DDDD543BD936AD0CC7641EECBC (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___0_value, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* V_0 = NULL;
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* V_1 = NULL;
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* V_2 = NULL;
+	{
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___UpdateFinalPlayerData_5;
+		V_0 = L_0;
+	}
+
+IL_0006:
+	{
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_1 = V_0;
+		V_1 = L_1;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_2 = V_1;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_3 = ___0_value;
+		Delegate_t* L_4;
+		L_4 = Delegate_Remove_m8B7DD5661308FA972E23CA1CC3FC9CEB355504E3(L_2, L_3, NULL);
+		V_2 = ((Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)Castclass((RuntimeObject*)L_4, Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var));
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_5 = V_2;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_6 = V_1;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_7;
+		L_7 = InterlockedCompareExchangeImpl<Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*>((&((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___UpdateFinalPlayerData_5), L_5, L_6);
+		V_0 = L_7;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_8 = V_0;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_9 = V_1;
+		if ((!(((RuntimeObject*)(Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)L_8) == ((RuntimeObject*)(Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)L_9))))
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		return;
+	}
+}
 // System.Void DistanceService::startDistanceForegroundService(System.Single,System.Single,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_startDistanceForegroundService_m13132E211390CE208D99837793E1965D9096D687 (float ___0_lapInterval, float ___1_distanceToTravel, String_t* ___2_id, const RuntimeMethod* method) 
 {
@@ -831,8 +900,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_startDistanceForegroundS
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4722A9E0E56C08FA8D4A4CA77FCF4C16BE6EC0A8);
 		s_Il2CppMethodInitialized = true;
 	}
-	Exception_t* V_0 = NULL;
+	bool V_0 = false;
+	Exception_t* V_1 = NULL;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
+	{
+		// if (Application.platform != RuntimePlatform.Android)
+		int32_t L_0;
+		L_0 = Application_get_platform_m59EF7D6155D18891B24767F83F388160B1FF2138(NULL);
+		V_0 = (bool)((((int32_t)((((int32_t)L_0) == ((int32_t)((int32_t)11)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		// return;
+		goto IL_0064;
+	}
+
+IL_0013:
 	{
 		// SetupCallbacks();
 		DistanceService_SetupCallbacks_m3E6E3EEE166E372831A54C68AAD813F81661305A(NULL);
@@ -840,155 +927,60 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_startDistanceForegroundS
 	try
 	{// begin try (depth: 1)
 		// walkingServiceBridge.Call("startDistanceForegroundService", lapInterval, distanceToTravel, id);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)3);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		float L_3 = ___0_lapInterval;
-		float L_4 = L_3;
-		RuntimeObject* L_5 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_4);
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_2 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_3 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)3);
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_4 = L_3;
+		float L_5 = ___0_lapInterval;
+		float L_6 = L_5;
+		RuntimeObject* L_7 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_6);
+		NullCheck(L_4);
+		ArrayElementTypeCheck (L_4, L_7);
+		(L_4)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_7);
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_8 = L_4;
+		float L_9 = ___1_distanceToTravel;
+		float L_10 = L_9;
+		RuntimeObject* L_11 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_10);
+		NullCheck(L_8);
+		ArrayElementTypeCheck (L_8, L_11);
+		(L_8)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject*)L_11);
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_12 = L_8;
+		String_t* L_13 = ___2_id;
+		NullCheck(L_12);
+		ArrayElementTypeCheck (L_12, L_13);
+		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject*)L_13);
 		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_6 = L_2;
-		float L_7 = ___1_distanceToTravel;
-		float L_8 = L_7;
-		RuntimeObject* L_9 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_8);
-		NullCheck(L_6);
-		ArrayElementTypeCheck (L_6, L_9);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject*)L_9);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_10 = L_6;
-		String_t* L_11 = ___2_id;
-		NullCheck(L_10);
-		ArrayElementTypeCheck (L_10, L_11);
-		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject*)L_11);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral4722A9E0E56C08FA8D4A4CA77FCF4C16BE6EC0A8, L_10, NULL);
-		goto IL_0052;
+		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_2, _stringLiteral4722A9E0E56C08FA8D4A4CA77FCF4C16BE6EC0A8, L_12, NULL);
+		goto IL_0064;
 	}// end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_0037;
+			goto CATCH_0049;
 		}
 		throw e;
 	}
 
-CATCH_0037:
+CATCH_0049:
 	{// begin catch(System.Exception)
-		Exception_t* L_12 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
+		Exception_t* L_14 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
 		// catch (Exception e)
-		V_0 = L_12;
+		V_1 = L_14;
 		// Debug.LogError("Exception while trying to start foreground service: " + e.Message);
-		Exception_t* L_13 = V_0;
-		NullCheck(L_13);
-		String_t* L_14;
-		L_14 = VirtualFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_13);
-		String_t* L_15;
-		L_15 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral41C9906045173CAE982780E8D0AEEACDCCE40B05)), L_14, NULL);
+		Exception_t* L_15 = V_1;
+		NullCheck(L_15);
+		String_t* L_16;
+		L_16 = VirtualFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_15);
+		String_t* L_17;
+		L_17 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral41C9906045173CAE982780E8D0AEEACDCCE40B05)), L_16, NULL);
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_15, NULL);
+		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_17, NULL);
 		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
-		goto IL_0052;
+		goto IL_0064;
 	}// end catch (depth: 1)
 
-IL_0052:
-	{
-		// }
-		return;
-	}
-}
-// System.Void DistanceService::startPacerForegroundService(System.Single,System.Single,System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_startPacerForegroundService_mA24096F0B77392D6C3212F171F953A55E5B13CD6 (float ___0_lapInterval, float ___1_distanceToTravel, int32_t ___2_paceMin, int32_t ___3_paceSeconds, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2FA3F5E0099167486F3870F8E3A9CFBCCC295402);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCB7EC7680C43B57726CCE7235C14ACE01FDD2A96);
-		s_Il2CppMethodInitialized = true;
-	}
-	Exception_t* V_0 = NULL;
-	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
-	{
-		// SetupCallbacks();
-		DistanceService_SetupCallbacks_m3E6E3EEE166E372831A54C68AAD813F81661305A(NULL);
-	}
-	try
-	{// begin try (depth: 1)
-		// walkingServiceBridge.Call("startPacerForegroundService", lapInterval, distanceToTravel,paceMin,paceSeconds);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)4);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		float L_3 = ___0_lapInterval;
-		float L_4 = L_3;
-		RuntimeObject* L_5 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_6 = L_2;
-		float L_7 = ___1_distanceToTravel;
-		float L_8 = L_7;
-		RuntimeObject* L_9 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_8);
-		NullCheck(L_6);
-		ArrayElementTypeCheck (L_6, L_9);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject*)L_9);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_10 = L_6;
-		int32_t L_11 = ___2_paceMin;
-		int32_t L_12 = L_11;
-		RuntimeObject* L_13 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_12);
-		NullCheck(L_10);
-		ArrayElementTypeCheck (L_10, L_13);
-		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject*)L_13);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_14 = L_10;
-		int32_t L_15 = ___3_paceSeconds;
-		int32_t L_16 = L_15;
-		RuntimeObject* L_17 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_16);
-		NullCheck(L_14);
-		ArrayElementTypeCheck (L_14, L_17);
-		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(3), (RuntimeObject*)L_17);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral2FA3F5E0099167486F3870F8E3A9CFBCCC295402, L_14, NULL);
-		// Debug.Log("Starting Pacer mode Foreground");
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralCB7EC7680C43B57726CCE7235C14ACE01FDD2A96, NULL);
-		goto IL_006b;
-	}// end try (depth: 1)
-	catch(Il2CppExceptionWrapper& e)
-	{
-		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
-		{
-			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_0050;
-		}
-		throw e;
-	}
-
-CATCH_0050:
-	{// begin catch(System.Exception)
-		Exception_t* L_18 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
-		// catch (Exception e)
-		V_0 = L_18;
-		// Debug.LogError("Exception while trying to start foreground service: " + e.Message);
-		Exception_t* L_19 = V_0;
-		NullCheck(L_19);
-		String_t* L_20;
-		L_20 = VirtualFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_19);
-		String_t* L_21;
-		L_21 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral41C9906045173CAE982780E8D0AEEACDCCE40B05)), L_20, NULL);
-		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_21, NULL);
-		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
-		goto IL_006b;
-	}// end catch (depth: 1)
-
-IL_006b:
+IL_0064:
 	{
 		// }
 		return;
@@ -1074,91 +1066,36 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_stopForegroundService_m0
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral083C23D42D39D2989373A8FE47D09D745F9A258B);
 		s_Il2CppMethodInitialized = true;
 	}
-	Exception_t* V_0 = NULL;
+	bool V_0 = false;
+	Exception_t* V_1 = NULL;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
+	{
+		// if (Application.platform != RuntimePlatform.Android)
+		int32_t L_0;
+		L_0 = Application_get_platform_m59EF7D6155D18891B24767F83F388160B1FF2138(NULL);
+		V_0 = (bool)((((int32_t)((((int32_t)L_0) == ((int32_t)((int32_t)11)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		// return;
+		goto IL_0048;
+	}
+
+IL_0013:
 	{
 	}
 	try
 	{// begin try (depth: 1)
 		// walkingServiceBridge.Call("stopForegroundService");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1;
-		L_1 = Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_inline(Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_RuntimeMethod_var);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral083C23D42D39D2989373A8FE47D09D745F9A258B, L_1, NULL);
-		goto IL_0035;
-	}// end try (depth: 1)
-	catch(Il2CppExceptionWrapper& e)
-	{
-		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
-		{
-			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_001a;
-		}
-		throw e;
-	}
-
-CATCH_001a:
-	{// begin catch(System.Exception)
-		Exception_t* L_2 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
-		// catch (Exception e)
-		V_0 = L_2;
-		// Debug.LogError("Error occured while stopping servce" + e.Message);
-		Exception_t* L_3 = V_0;
-		NullCheck(L_3);
-		String_t* L_4;
-		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_3);
-		String_t* L_5;
-		L_5 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralBA407CB07B586E590D304D510D2E3BFBAF1BE683)), L_4, NULL);
-		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_5, NULL);
-		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
-		goto IL_0035;
-	}// end catch (depth: 1)
-
-IL_0035:
-	{
-		// }
-		return;
-	}
-}
-// System.Void DistanceService::UpdatePacerValues(System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_UpdatePacerValues_mC06101646B18B3C8B9E9AB0A647857C0B85322DC (int32_t ___0_paceMins, int32_t ___1_paceSeconds, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2CB0EC158B1A71C5DF3C0905322FF559773FC968);
-		s_Il2CppMethodInitialized = true;
-	}
-	Exception_t* V_0 = NULL;
-	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
-	{
-	}
-	try
-	{// begin try (depth: 1)
-		// walkingServiceBridge.Call("UpdatePacerValues", paceMins,paceSeconds);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)2);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		int32_t L_3 = ___0_paceMins;
-		int32_t L_4 = L_3;
-		RuntimeObject* L_5 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_4);
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_2 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_3;
+		L_3 = Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_inline(Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_RuntimeMethod_var);
 		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_6 = L_2;
-		int32_t L_7 = ___1_paceSeconds;
-		int32_t L_8 = L_7;
-		RuntimeObject* L_9 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_8);
-		NullCheck(L_6);
-		ArrayElementTypeCheck (L_6, L_9);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject*)L_9);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral2CB0EC158B1A71C5DF3C0905322FF559773FC968, L_6, NULL);
+		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_2, _stringLiteral083C23D42D39D2989373A8FE47D09D745F9A258B, L_3, NULL);
 		goto IL_0048;
 	}// end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -1173,89 +1110,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_UpdatePacerValues_mC0610
 
 CATCH_002d:
 	{// begin catch(System.Exception)
-		Exception_t* L_10 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
+		Exception_t* L_4 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
 		// catch (Exception e)
-		V_0 = L_10;
-		// Debug.LogError("Error occured while calling function" + e.Message);
-		Exception_t* L_11 = V_0;
-		NullCheck(L_11);
-		String_t* L_12;
-		L_12 = VirtualFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_11);
-		String_t* L_13;
-		L_13 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralA69ABAC8A03BF7DCFFD6C5F44AEE6E5980580880)), L_12, NULL);
+		V_1 = L_4;
+		// Debug.LogError("Error occured while stopping servce" + e.Message);
+		Exception_t* L_5 = V_1;
+		NullCheck(L_5);
+		String_t* L_6;
+		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_5);
+		String_t* L_7;
+		L_7 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralBA407CB07B586E590D304D510D2E3BFBAF1BE683)), L_6, NULL);
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_13, NULL);
+		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_7, NULL);
 		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
 		goto IL_0048;
 	}// end catch (depth: 1)
 
 IL_0048:
-	{
-		// }
-		return;
-	}
-}
-// System.Void DistanceService::InBackground(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_InBackground_m2C11B8AEB6040E8A830EC0FF45C491B941E5D801 (bool ___0_inBackground, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral704AF9F981943AA2565EE99B422470BDED8E570D);
-		s_Il2CppMethodInitialized = true;
-	}
-	Exception_t* V_0 = NULL;
-	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
-	{
-	}
-	try
-	{// begin try (depth: 1)
-		// walkingServiceBridge.Call("IsRunningInBackground",inBackground);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		bool L_3 = ___0_inBackground;
-		bool L_4 = L_3;
-		RuntimeObject* L_5 = Box(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral704AF9F981943AA2565EE99B422470BDED8E570D, L_2, NULL);
-		goto IL_003f;
-	}// end try (depth: 1)
-	catch(Il2CppExceptionWrapper& e)
-	{
-		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
-		{
-			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_0024;
-		}
-		throw e;
-	}
-
-CATCH_0024:
-	{// begin catch(System.Exception)
-		Exception_t* L_6 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
-		// catch (Exception e)
-		V_0 = L_6;
-		// Debug.LogError("Error occured while setting background check" + e.Message);
-		Exception_t* L_7 = V_0;
-		NullCheck(L_7);
-		String_t* L_8;
-		L_8 = VirtualFuncInvoker0< String_t* >::Invoke(5 /* System.String System.Exception::get_Message() */, L_7);
-		String_t* L_9;
-		L_9 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralCBEFD4BC368423E535ED0BD672F594BF93DEDF25)), L_8, NULL);
-		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_9, NULL);
-		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
-		goto IL_003f;
-	}// end catch (depth: 1)
-
-IL_003f:
 	{
 		// }
 		return;
@@ -1273,45 +1144,41 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_PauseForegroundService_m
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE53650F6B092CC241C1CB875675CC493896FC8EA);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
 	{
-		// walkingServiceBridge.Call("PauseForegroundService",paused);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		bool L_3 = ___0_paused;
-		bool L_4 = L_3;
-		RuntimeObject* L_5 = Box(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteralE53650F6B092CC241C1CB875675CC493896FC8EA, L_2, NULL);
-		// }
-		return;
-	}
-}
-// System.Void DistanceService::SendAIIndex(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_SendAIIndex_m4356DAA0A6503BDDFB24718952E61BFFF36905D6 (String_t* ___0_jsonString, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB032068F667D3E745D14ED808CE7F5A9F65AFB45);
-		s_Il2CppMethodInitialized = true;
+		// if (Application.platform != RuntimePlatform.Android)
+		int32_t L_0;
+		L_0 = Application_get_platform_m59EF7D6155D18891B24767F83F388160B1FF2138(NULL);
+		V_0 = (bool)((((int32_t)((((int32_t)L_0) == ((int32_t)((int32_t)11)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0013;
+		}
 	}
 	{
-		// walkingServiceBridge.Call("GetAIIndexValues", jsonString);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		String_t* L_3 = ___0_jsonString;
+		// return;
+		goto IL_0032;
+	}
+
+IL_0013:
+	{
+		// walkingServiceBridge.Call("PauseForegroundService", paused);
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_2 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_3 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_4 = L_3;
+		bool L_5 = ___0_paused;
+		bool L_6 = L_5;
+		RuntimeObject* L_7 = Box(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_il2cpp_TypeInfo_var, &L_6);
+		NullCheck(L_4);
+		ArrayElementTypeCheck (L_4, L_7);
+		(L_4)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_7);
 		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_3);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_3);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteralB032068F667D3E745D14ED808CE7F5A9F65AFB45, L_2, NULL);
+		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_2, _stringLiteralE53650F6B092CC241C1CB875675CC493896FC8EA, L_4, NULL);
+	}
+
+IL_0032:
+	{
 		// }
 		return;
 	}
@@ -1328,111 +1195,45 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_ReconnectToService_m2F26
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD4ED819345C61698F2BDC0D5CF0B148E21C0CC6C);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
+	{
+		// if (Application.platform != RuntimePlatform.Android)
+		int32_t L_0;
+		L_0 = Application_get_platform_m59EF7D6155D18891B24767F83F388160B1FF2138(NULL);
+		V_0 = (bool)((((int32_t)((((int32_t)L_0) == ((int32_t)((int32_t)11)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
+		{
+			goto IL_0013;
+		}
+	}
+	{
+		// return;
+		goto IL_003f;
+	}
+
+IL_0013:
 	{
 		// SetupCallbacks();
 		DistanceService_SetupCallbacks_m3E6E3EEE166E372831A54C68AAD813F81661305A(NULL);
 		// PauseForegroundService(false);
 		DistanceService_PauseForegroundService_m9AD21FDAA764DE699FF365EF2D92535EB4297A25((bool)0, NULL);
-		// walkingServiceBridge.Call("RegisterReciever",distanceToTravel);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		float L_3 = ___0_distanceToTravel;
-		float L_4 = L_3;
-		RuntimeObject* L_5 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_4);
+		// walkingServiceBridge.Call("RegisterReciever", distanceToTravel);
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_2 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_3 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_4 = L_3;
+		float L_5 = ___0_distanceToTravel;
+		float L_6 = L_5;
+		RuntimeObject* L_7 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_6);
+		NullCheck(L_4);
+		ArrayElementTypeCheck (L_4, L_7);
+		(L_4)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_7);
 		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteralD4ED819345C61698F2BDC0D5CF0B148E21C0CC6C, L_2, NULL);
-		// }
-		return;
+		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_2, _stringLiteralD4ED819345C61698F2BDC0D5CF0B148E21C0CC6C, L_4, NULL);
 	}
-}
-// System.Void DistanceService::UpdateVolume(System.Single,System.Single,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_UpdateVolume_m741500222005EDBBF4136CA5F68BEEDF4B1DDA6A (float ___0_voiceVolume, float ___1_footstepsVolume, float ___2_feedbackVolume, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
+
+IL_003f:
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral18EEAB6ABC5F8808F3FC0524640C0A2004484238);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// walkingServiceBridge.Call("UpdateVolume", voiceVolume, footstepsVolume, feedbackVolume);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)3);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		float L_3 = ___0_voiceVolume;
-		float L_4 = L_3;
-		RuntimeObject* L_5 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_6 = L_2;
-		float L_7 = ___1_footstepsVolume;
-		float L_8 = L_7;
-		RuntimeObject* L_9 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_8);
-		NullCheck(L_6);
-		ArrayElementTypeCheck (L_6, L_9);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject*)L_9);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_10 = L_6;
-		float L_11 = ___2_feedbackVolume;
-		float L_12 = L_11;
-		RuntimeObject* L_13 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_12);
-		NullCheck(L_10);
-		ArrayElementTypeCheck (L_10, L_13);
-		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject*)L_13);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral18EEAB6ABC5F8808F3FC0524640C0A2004484238, L_10, NULL);
-		// }
-		return;
-	}
-}
-// System.Void DistanceService::UpdateVolumeFirst(System.Single,System.Single,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DistanceService_UpdateVolumeFirst_m586D5B1572B6FFB27A19AB0D3CC4840B416660D0 (float ___0_voiceVolume, float ___1_footstepsVolume, float ___2_feedbackVolume, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9463E3E7C7D96D9132C320E6FCCD2C6C768BB92D);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// SetupCallbacks();
-		DistanceService_SetupCallbacks_m3E6E3EEE166E372831A54C68AAD813F81661305A(NULL);
-		// walkingServiceBridge.Call("UpdateVolumeFirst", voiceVolume, footstepsVolume, feedbackVolume);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___walkingServiceBridge_2;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)3);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		float L_3 = ___0_voiceVolume;
-		float L_4 = L_3;
-		RuntimeObject* L_5 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_6 = L_2;
-		float L_7 = ___1_footstepsVolume;
-		float L_8 = L_7;
-		RuntimeObject* L_9 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_8);
-		NullCheck(L_6);
-		ArrayElementTypeCheck (L_6, L_9);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject*)L_9);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_10 = L_6;
-		float L_11 = ___2_feedbackVolume;
-		float L_12 = L_11;
-		RuntimeObject* L_13 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_12);
-		NullCheck(L_10);
-		ArrayElementTypeCheck (L_10, L_13);
-		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject*)L_13);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral9463E3E7C7D96D9132C320E6FCCD2C6C768BB92D, L_10, NULL);
 		// }
 		return;
 	}
@@ -1538,6 +1339,50 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallbackHandler_onUpdatePlayerData_mFF13
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral9FDA3150A6BAA9876A90162CB23C39E1BBD00422, NULL);
 		// UpdatePlayerData?.Invoke(data);
 		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___UpdatePlayerData_4;
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_1 = L_0;
+		G_B1_0 = L_1;
+		if (L_1)
+		{
+			G_B2_0 = L_1;
+			goto IL_0017;
+		}
+	}
+	{
+		goto IL_001e;
+	}
+
+IL_0017:
+	{
+		String_t* L_2 = ___0_data;
+		NullCheck(G_B2_0);
+		Action_1_Invoke_m690438AAE38F9762172E3AE0A33D0B42ACD35790_inline(G_B2_0, L_2, NULL);
+	}
+
+IL_001e:
+	{
+		// }
+		return;
+	}
+}
+// System.Void DistanceService/CallbackHandler::onUpdateFinalPlayerData(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallbackHandler_onUpdateFinalPlayerData_mADD3D5523CAD55D6925FCC1A6F0DADA875D0BD07 (CallbackHandler_tD28E7031691B17A9084E69F47AF9287CB29A062F* __this, String_t* ___0_data, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9FDA3150A6BAA9876A90162CB23C39E1BBD00422);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* G_B2_0 = NULL;
+	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* G_B1_0 = NULL;
+	{
+		// Debug.Log("onUpdatePlayerData UNITY >>>>");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral9FDA3150A6BAA9876A90162CB23C39E1BBD00422, NULL);
+		// UpdateFinalPlayerData?.Invoke(data);
+		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_0 = ((DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_StaticFields*)il2cpp_codegen_static_fields_for(DistanceService_t03A5217098494581FC50CEEFD9C2E3F9C4FCB402_il2cpp_TypeInfo_var))->___UpdateFinalPlayerData_5;
 		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_1 = L_0;
 		G_B1_0 = L_1;
 		if (L_1)

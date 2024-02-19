@@ -9,13 +9,11 @@ import java.util.ArrayList;
 
 public class AIHandler {
     private RunAIInterface game;
-    private SoundInterface soundInterface;
     public ArrayList<Float> aiDistanceTravelled;
     public ArrayList<Integer> aiTime;
 
-    public AIHandler(RunAIInterface game, SoundInterface soundInterface) {
+    public AIHandler(RunAIInterface game) {
         this.game = game;
-        this.soundInterface = soundInterface;
         aiDistanceTravelled = new ArrayList<>();
         aiTime = new ArrayList<>();
     }
@@ -23,15 +21,10 @@ public class AIHandler {
     public void StartTheAI()
     {
         game.CreateAndRunAI();
-        aiDistanceTravelled = game.AIDistances();
     }
     public void RunTheAI(){
-            aiDistanceTravelled = game.RunTheAI();
-
-    }
-    public void PingTheAI(){
+        aiDistanceTravelled = game.RunTheAI();
         aiTime = game.GetTheTime();
-        aiDistanceTravelled = game.AIDistances();
     }
 
     public void stopRunning() {

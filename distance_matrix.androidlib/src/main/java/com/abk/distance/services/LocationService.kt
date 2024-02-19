@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.res.Configuration
 import android.graphics.Color
 import android.location.*
 import android.os.*
@@ -31,16 +32,16 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.mygdx.runai.LibGDX
 import kotlinx.coroutines.*
-import java.io.BufferedWriter
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
-import java.io.FileWriter
-import java.io.IOException
 import java.io.ObjectOutputStream
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.util.*
 import java.util.zip.GZIPOutputStream
 import kotlin.concurrent.fixedRateTimer
+import kotlin.math.ceil
 
 
 class LocationService : Service() {
@@ -87,7 +88,6 @@ class LocationService : Service() {
     var strideLength: ArrayList<Float>? = null;
     var voiceVolume = 0f;
     var footstepVolume = 0f;
-    var feedbackVolume = 0f;
     var stepsData: ArrayList<StepDataCalculator>? = null;
 
     var modeValue: Int = 0;
@@ -108,9 +108,11 @@ class LocationService : Service() {
     var fastestPaceMin = Int.MAX_VALUE
     var fastestPaceSeconds = Int.MAX_VALUE
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    var playerName = " ";
+
 
     @RequiresApi(Build.VERSION_CODES.S)
-    private val locationRequest: LocationRequest = LocationRequest.Builder(100)
+    private val locationRequest: LocationRequest = LocationRequest.Builder(500)
         .setWaitForAccurateLocation(true)
         .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
         .build()
@@ -171,8 +173,8 @@ class LocationService : Service() {
         targetPaceSecondsAI = i.getIntExtra("PaceSecond", 0)
         voiceVolume = i.getFloatExtra("voiceVolume", 0f)
         footstepVolume = i.getFloatExtra("footstepVolume", 0f)
-        feedbackVolume = i.getFloatExtra("feedbackVolume", 0f)
-        System.out.println("Sound Values" + " " + voiceVolume + " h" +footstepVolume + " s" + feedbackVolume)
+        playerName = i.getStringExtra("Name").toString();
+        System.out.println("Sound Values" + " " + voiceVolume + " h" +footstepVolume + " s")
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         startUpdatingLocation()
         return START_STICKY
@@ -205,43 +207,44 @@ class LocationService : Service() {
 
     private fun createNotificationChanel(): Notification {
         val NOTIFICATION_CHANNEL_ID = "com.getDistance"
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channelName = "Foreground Service"
-            val chan = NotificationChannel(
-                NOTIFICATION_CHANNEL_ID,
-                channelName,
-                NotificationManager.IMPORTANCE_HIGH,
+        val channelName = "Foreground Service"
+        val chan = NotificationChannel(
+            NOTIFICATION_CHANNEL_ID,
+            channelName,
+            NotificationManager.IMPORTANCE_HIGH,
 
-                )
+            )
 
-            chan.lightColor = Color.GREEN
-            chan.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
-            chan.description = "Foreground Service showing your activity and duration"
-            manager.createNotificationChannel(chan)
-        }
+        chan.lightColor = Color.GREEN
+        chan.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+        chan.description = "Foreground Service showing your activity and duration"
+        manager.createNotificationChannel(chan)
         val builder: NotificationCompat.Builder = NotificationCompat.Builder(
             this, NOTIFICATION_CHANNEL_ID
         )
         val yourRequestCode = 66
         val resultIntent = Intent(this, getMainActivityClass(this))
-        val pendingIntent: PendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        val pendingIntent: PendingIntent =
             PendingIntent.getActivity(
                 this,
                 yourRequestCode,
                 resultIntent,
                 PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
             )
-        } else {
-            PendingIntent.getActivity(
-                this, yourRequestCode, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT
-            )
-        }
 
         val collapsedView = RemoteViews(packageName, R.layout.notification_collapsed)
         val expandedView = RemoteViews(packageName, R.layout.notification_expanded)
 
-        expandedView.setTextViewText(R.id.DistanceRan, dataTypes?.get(R.id.DistanceRan.toString()))
+        val nightModeFlags: Int = applicationContext.resources.configuration.uiMode and
+                Configuration.UI_MODE_NIGHT_MASK
+        when (nightModeFlags) {
+            Configuration.UI_MODE_NIGHT_YES -> setNotifcationDarkMode(expandedView)
+            Configuration.UI_MODE_NIGHT_NO -> setNotifcationLightMode(expandedView)
+        }
+
+        expandedView.setTextViewText(R.id.Distance_ran, dataTypes?.get(R.id.Distance_ran.toString()))
         expandedView.setTextViewText(R.id.TimeTaken, dataTypes?.get(R.id.TimeTaken.toString()))
+        expandedView.setTextViewText(R.id.Pace, dataTypes?.get(R.id.Pace.toString()))
 
         //assign intent to the button
         val pauseIntent = Intent("service.PauseRequest")
@@ -251,26 +254,40 @@ class LocationService : Service() {
         expandedView.setOnClickPendingIntent(R.id.Resume, pausePendingIntent)
 
         if (_paused) {
-            expandedView.setTextViewText(R.id.Notification_Text_Header, "Run Paused")
             expandedView.setViewVisibility(R.id.Resume, View.VISIBLE)
             expandedView.setViewVisibility(R.id.Pause, View.GONE);
         } else {
-            expandedView.setTextViewText(
-                R.id.Notification_Text_Header, "RunAI is tracking Your Run"
-            )
             expandedView.setViewVisibility(R.id.Resume, View.GONE)
             expandedView.setViewVisibility(R.id.Pause, View.VISIBLE);
         }
 
         return builder
             //.setContentTitle("RunAI is tracking your run")
-            .setSmallIcon(R.drawable.logo).setContentIntent(pendingIntent).setOnlyAlertOnce(true)
-            .setAutoCancel(false).setCustomContentView(collapsedView)
+            .setSmallIcon(R.drawable.logo)
+            .setContentIntent(pendingIntent)
+            .setOnlyAlertOnce(true)
+            .setAutoCancel(false)
+            .setCustomContentView(collapsedView)
             .setCustomBigContentView(expandedView)
             .setStyle(NotificationCompat.DecoratedCustomViewStyle())
-            .setFullScreenIntent(pendingIntent, true)
-
             .build()
+    }
+
+    private fun setNotifcationLightMode(view: RemoteViews){
+        view.setTextColor(R.id.Distance_ran,Color.BLACK);
+        view.setTextColor(R.id.distance_prefix,Color.BLACK);
+        view.setTextColor(R.id.TimeTaken,Color.BLACK);
+        view.setTextColor(R.id.time_prefix,Color.BLACK);
+        view.setTextColor(R.id.Pace,Color.BLACK);
+        view.setTextColor(R.id.pace_prefix,Color.BLACK);
+    }
+    private fun setNotifcationDarkMode(view: RemoteViews){
+        view.setTextColor(R.id.Distance_ran,Color.WHITE);
+        view.setTextColor(R.id.distance_prefix,Color.WHITE);
+        view.setTextColor(R.id.TimeTaken,Color.WHITE);
+        view.setTextColor(R.id.time_prefix,Color.WHITE);
+        view.setTextColor(R.id.Pace,Color.WHITE);
+        view.setTextColor(R.id.pace_prefix,Color.WHITE);
     }
 
     private fun getMainActivityClass(context: Context): Class<*>? {
@@ -316,53 +333,7 @@ class LocationService : Service() {
     var _stepTimeInteval = 5;
     var stepTimer = 0;
     var lastTimeMillisecond: Long = System.currentTimeMillis()
-
-
-    private fun initialiseLibGDX()
-    {
-        LappingManager = LappingManager(LapInterval, DistanceToTravel)
-        AITextToSpeech = AITextToSpeech(applicationContext)
-
-        SoundController = SoundController(applicationContext, AITextToSpeech)
-        StepsTracker = StepsTracker(applicationContext)
-        HeartRateTracker = HeartRateTracker(applicationContext)
-        StepsTracker!!.startCounting()
-        HeartRateTracker!!.trackHeartRate()
-        LibGDX = LibGDX(
-            SoundController,
-            PlayerDataInterfaceClass(RankID.toFloat(), 0f, 0f, DistanceToTravel),
-            modeValue
-        )
-
-
-        LibGDX!!.paceMinute = targetPaceMinuteAI;
-        LibGDX!!.paceSecond = targetPaceSecondsAI;
-
-        LibGDX!!.voiceVolumeValue = voiceVolume
-        LibGDX!!.footstepVolumeValue = footstepVolume
-        System.out.println("Volume " + footstepVolume + " " + LibGDX!!.footstepVolumeValue);
-        LibGDX!!.feedbackVolumeValue = feedbackVolume
-
-        AIHandler = AIHandler(LibGDX, SoundController);
-        AIHandler!!.StartTheAI();
-    }
-
-    private fun updateLibgdxData(){
-
-        // Update RunAI values
-        //test.testUpdate();
-        if (!distance.toFloat().isNaN()) {
-            LibGDX!!.playerDistanceMeters = distance.toFloat()
-        } else {
-            LibGDX!!.playerDistanceMeters = 1f;
-        }
-        LibGDX!!.modeValue = modeValue;
-        LibGDX!!.voiceVolumeValue = voiceVolume
-        LibGDX!!.footstepVolumeValue = footstepVolume
-        LibGDX!!.feedbackVolumeValue = feedbackVolume
-        AIHandler!!.RunTheAI()
-        AIHandler!!.PingTheAI()
-    }
+    var playerDataClass: PlayerDataInterfaceClass? = null
     @RequiresApi(Build.VERSION_CODES.S)
     @SuppressLint("MissingPermission")
     fun startUpdatingLocation() {
@@ -391,45 +362,93 @@ class LocationService : Service() {
                     locationCallback,
                     null /* Looper */
                 )
-
                 gpsCount = 0
                 goodGpsCount = 0
-
-                initialiseLibGDX();
-                stepTimer = 0;
-                distance = 0.0;
-
-                var StepDataCalculator = StepDataCalculator(StepsTracker!!.getStepCount(), 0, StepsTracker!!.getDistance(distance.toFloat()),0)
-                stepsData?.add(StepDataCalculator)
-
+                InitialiseLibGDX()
 
                 timer = fixedRateTimer("timer", initialDelay = 0, period = 1000) {
                     if (!_paused) {
                         if (distance < DistanceToTravel) {
                             _timer++
+                            playerDataClass!!.SetPlayerData(_timer,currentPlayerPaceMin,currentPlayerPaceSeconds,distance)
                         }
-                            stepTimer++;
-                            if(_stepTimeInteval  == stepTimer){
-                                var StepDataCalculator = StepDataCalculator(StepsTracker!!.getStepCount(), System.currentTimeMillis() - lastTimeMillisecond, StepsTracker!!.getDistance(distance.toFloat()),_timer)
-                                lastTimeMillisecond = System.currentTimeMillis()
-                                stepsData?.add(StepDataCalculator)
-                                stepTimer = 0;
-                            }
-
+                        RunLibGDX()
                     }
-                    updateLibgdxData();
+
                     FormatText(distance, _timer)
                     val notification = createNotificationChanel()
                     manager.notify(NOTI_ID, notification)
                 }
-
-
 
             } catch (e: RuntimeException) {
                 Log.e(LOG_TAG, e.localizedMessage.toString())
             }
 
         }
+    }
+
+    private fun RunLibGDX() {
+
+        //this to handle the steps
+        stepTimer++;
+        if (_stepTimeInteval == stepTimer) {
+            var StepData = StepDataCalculator(
+                StepsTracker!!.getStepCount(),
+                System.currentTimeMillis() - lastTimeMillisecond,
+                StepsTracker!!.getDistance(distance.toFloat()),
+                _timer
+            )
+            lastTimeMillisecond = System.currentTimeMillis()
+            stepsData?.add(StepData)
+            stepTimer = 0;
+        }
+
+        // Update the LibGDX values
+        if (!distance.toFloat().isNaN()) {
+            LibGDX!!.playerDistanceMeters = distance.toFloat()
+        } else {
+            LibGDX!!.playerDistanceMeters = 1f;
+        }
+        LibGDX!!.modeValue = modeValue;
+        LibGDX!!.voiceVolumeValue = voiceVolume
+        LibGDX!!.footstepVolumeValue = footstepVolume
+        AIHandler!!.RunTheAI()
+    }
+
+    private fun InitialiseLibGDX() {
+        LappingManager = LappingManager(LapInterval, DistanceToTravel)
+        AITextToSpeech = AITextToSpeech(applicationContext)
+
+        SoundController = SoundController(applicationContext, AITextToSpeech)
+        StepsTracker = StepsTracker(applicationContext)
+        HeartRateTracker = HeartRateTracker(applicationContext)
+        StepsTracker!!.startCounting()
+        HeartRateTracker!!.trackHeartRate()
+
+        Log.d(TAG, RankID.toFloat().toString() + " Rank ID")
+
+        playerDataClass =
+            PlayerDataInterfaceClass(RankID.toFloat(), 0, DistanceToTravel, playerName)
+        LibGDX = LibGDX(
+            SoundController,
+            playerDataClass,
+            modeValue,
+        )
+
+
+        LibGDX!!.paceMinute = targetPaceMinuteAI;
+        LibGDX!!.paceSecond = targetPaceSecondsAI;
+
+        LibGDX!!.voiceVolumeValue = voiceVolume
+        LibGDX!!.footstepVolumeValue = footstepVolume
+
+        AIHandler = AIHandler(LibGDX);
+        AIHandler!!.StartTheAI();
+        stepTimer = 0;
+        distance = 0.0;
+
+        var stepData = StepDataCalculator(StepsTracker!!.getStepCount(), 0, StepsTracker!!.getDistance(distance.toFloat()),0)
+        stepsData?.add(stepData)
     }
 
     private var distance: Double = 0.0;
@@ -442,23 +461,21 @@ class LocationService : Service() {
         val minutes = (milliseconds / (1000 * 60) % 60).toInt()
         val hours = (milliseconds / (1000 * 60 * 60) % 24).toInt()
 
-        val secondsRaw = (milliseconds / 1000).toFloat()
-        SaveValues(100f, secondsRaw);
 
         distanceIntent.putExtra("distance", distance)
         sendBroadcast(distanceIntent)
 //        val d = distance * 1000
-        val meters = (distance % 1000).toInt()
-        val kilometers: Int = ((distance.toInt() - meters) / 1000)
+        val kilometers: Double = distance / 1000f
+        val flooredKilometers = BigDecimal(kilometers.toDouble()).setScale(2, RoundingMode.FLOOR).toFloat()
 
-        val durationText = "Duration: ${String.format("%02d:%02d:%02d", hours, minutes, seconds)}"
-        val distanceStr =
-            "Distance: ${if (kilometers > 0) "$kilometers km $meters m" else "$meters m"}"
-//        val distance = "$currentNumberOfStepCount : ${getDistanceRun(currentNumberOfStepCount)} km"
+        val durationText = String.format("%02d:%02d:%02d", hours, minutes, seconds)
+        val distanceStr = flooredKilometers.toString();
+        val paceText = "$currentPlayerPaceMin'$currentPlayerPaceSeconds''"
 
 
         dataTypes = mapOf<String, String>(
-            R.id.DistanceRan.toString() to distanceStr, R.id.TimeTaken.toString() to durationText
+            R.id.Distance_ran.toString() to distanceStr, R.id.TimeTaken.toString() to durationText,
+            R.id.Pace.toString() to paceText
         )
         LappingManager!!.lapChecker(distance, rawSeconds)
 
@@ -471,7 +488,6 @@ class LocationService : Service() {
 
     private fun CalculateCurrentPace() {
         // Convert speed from m/s to km/min
-        println("Speed :: " + currentSpeed)
         val speedInKmPerMin = currentSpeed * 0.06 // this is correct
 
         // Calculate pace in minutes per kilometer
@@ -483,15 +499,19 @@ class LocationService : Service() {
             currentPlayerPaceSeconds= 0;
             return;
         }
-        currentPlayerPaceMin = paceInMinutesPerKm.toInt()
-        currentPlayerPaceSeconds= ((paceInMinutesPerKm - currentPlayerPaceMin ) * 60.0).toInt()
-        println("Pace:: " + currentPlayerPaceMin + " : " + currentPlayerPaceSeconds)
+        else{
+            currentPlayerPaceMin = paceInMinutesPerKm.toInt()
+            currentPlayerPaceSeconds= ceil((paceInMinutesPerKm - currentPlayerPaceMin ) * 60.0).toInt()
+        }
 
-        val paces =  paceChecker(serviceData!!.fastestPaceMin, serviceData!!.fastestPaceSeconds, serviceData!!.slowestPaceMin, serviceData!!.slowestPaceSeconds)
-        fastestPaceMin = paces.first.first
-        fastestPaceSeconds = paces.first.second
-        slowestPaceMin = paces.second.first
-        slowestPaceSeconds = paces.second.second
+        if((currentPlayerPaceMin < fastestPaceMin || (currentPlayerPaceMin == fastestPaceMin && currentPlayerPaceSeconds < fastestPaceSeconds))){
+            fastestPaceMin = currentPlayerPaceMin;
+            fastestPaceSeconds = currentPlayerPaceSeconds;
+        }
+        if(slowestPaceMin > 20 && currentPlayerPaceMin < 20||currentPlayerPaceMin > slowestPaceMin || (currentPlayerPaceMin == slowestPaceMin && currentPlayerPaceSeconds > slowestPaceSeconds)){
+            slowestPaceMin = currentPlayerPaceMin;
+            slowestPaceSeconds = currentPlayerPaceSeconds;
+        }
     }
 
     var serviceData :ServiceData ?= null;
@@ -547,7 +567,7 @@ class LocationService : Service() {
             //putExtra("Service Data",compressServiceData(serviceData))
         })
     }
-    private fun SendValues(){
+    private fun SendFinalValues(){
         val distanceTravelled = distance
         val stepCounted = stepsData
         val totalTimeRan = _timer
@@ -558,23 +578,11 @@ class LocationService : Service() {
         val locationDistanceDatas = ArrayList(locationDistanceData!!)
         val locationDataPoints = ArrayList(ArrayList(latLongList))
 // Initialize these to some high value for comparison
-        var slowestPaceMin = Int.MAX_VALUE
-        var slowestPaceSeconds = Int.MAX_VALUE
-// Initialize these to zero for comparison
-        var fastestPaceMin = Int.MAX_VALUE
-        var fastestPaceSeconds = Int.MAX_VALUE
-        //do some checks between paces
-        if(serviceData != null){
-            val paces =  paceChecker(serviceData!!.fastestPaceMin, serviceData!!.fastestPaceSeconds, serviceData!!.slowestPaceMin, serviceData!!.slowestPaceSeconds)
-            fastestPaceMin = paces.first.first
-            fastestPaceSeconds = paces.first.second
-            slowestPaceMin = paces.second.first
-            slowestPaceSeconds = paces.second.second
-        }
         var cadenceAtPoint = 0;
         if(stepsData!!.size > 0){
             cadenceAtPoint = stepsData!!.last().cadence;
         }
+
         serviceData = ServiceData(
             distanceTravelled = distanceTravelled,
             currentPlayerPaceMin,
@@ -602,44 +610,9 @@ class LocationService : Service() {
         sendBroadcast(Intent().apply {
             action = "action.data_update"
             addCategory("action.category.distance")
-            //putExtra("Service Data",compressServiceData(serviceData))
+            putExtra("CompetitionStopped",true)
         })
     }
-    fun paceChecker(
-        fastestPaceMins: Int, fastestPaceSeconds: Int,
-        slowestPaceMins: Int, slowestPaceSeconds: Int
-    ): Pair<Pair<Int, Int>, Pair<Int, Int>> {
-
-        // Convert the paces to seconds for comparison
-        val fastestPaceInSeconds = fastestPaceMins * 60 + fastestPaceSeconds
-        val slowestPaceInSeconds = slowestPaceMins * 60 + slowestPaceSeconds
-        val currentPlayerPaceInSeconds = currentPlayerPaceMin * 60 + currentPlayerPaceSeconds
-
-        // Initialize new fastest and slowest paces
-        var newFastestPaceInSeconds = fastestPaceInSeconds
-        var newSlowestPaceInSeconds = slowestPaceInSeconds
-
-        // Check and update the new fastest pace if it's not 0 and is faster than the current fastest pace
-        if (fastestPaceInSeconds == 0 || (fastestPaceInSeconds != 0 && currentPlayerPaceInSeconds < fastestPaceInSeconds)) {
-            newFastestPaceInSeconds = currentPlayerPaceInSeconds
-        }
-
-        // Check and update the new slowest pace if it's not more than 20 minutes and is slower than the current slowest pace
-        if (slowestPaceInSeconds == 0 ||slowestPaceInSeconds > 1200 ||currentPlayerPaceInSeconds <= 1200 && currentPlayerPaceInSeconds > slowestPaceInSeconds) {
-            newSlowestPaceInSeconds = currentPlayerPaceInSeconds
-        }
-
-        // Convert the new fastest and slowest paces back to minutes and seconds
-        val newFastestPaceMins = newFastestPaceInSeconds / 60
-        val newFastestPaceSeconds = newFastestPaceInSeconds % 60
-        val newSlowestPaceMins = newSlowestPaceInSeconds / 60
-        val newSlowestPaceSeconds = newSlowestPaceInSeconds % 60
-
-        return Pair(Pair(newFastestPaceMins, newFastestPaceSeconds), Pair(newSlowestPaceMins, newSlowestPaceSeconds))
-    }
-
-
-
 
     fun compressServiceData(data: ServiceData): String {
         // Convert object to byte array
@@ -658,30 +631,6 @@ class LocationService : Service() {
         return Base64.encodeToString(compressedData.toByteArray(), Base64.DEFAULT)
     }
 
-
-    private fun SaveValues(meters: Float, time: Float) {
-
-        SaveValueInFile("dist_m", meters);
-        SaveValueInFile("time_s", time);
-
-    }
-
-    private fun SaveValueInFile(name: String, value: Float) {
-        try {
-            val file = File(filesDir, name + ".txt")
-
-            //System.out.println(file);
-            val writer = BufferedWriter(FileWriter(file))
-            writer.write("Speed: $value")
-            writer.close()
-            // println("Variables saved to file.")
-
-        } catch (e: IOException) {
-            println("An error occurred saving the file.")
-            e.printStackTrace()
-        }
-
-    }
     fun stopUpdatingLocation() {
         if (isLocationManagerUpdatingLocation) {
             try {
@@ -689,8 +638,6 @@ class LocationService : Service() {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-//            val locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
-//            locationManager.removeUpdates(this)
             fusedLocationClient.removeLocationUpdates(locationCallback)
             isLocationManagerUpdatingLocation = false
         }
@@ -706,14 +653,13 @@ class LocationService : Service() {
         stepTimer = 0;
         if(lastLocation != null){
             latLongList!!.add(DataPoint(lastLocation!!.latitude, lastLocation!!.longitude))
-            AIHandler!!.PingTheAI()
         }
         locationDistanceData!!.add(
             MapSimulationPointData(
                 _timer, distance, AIHandler!!.aiDistanceTravelled,currentPlayerPaceMin,currentPlayerPaceSeconds
             )
         );
-        SendValues();
+        SendFinalValues();
         println("Sending NoN Compression data")
     }
 
@@ -733,22 +679,8 @@ class LocationService : Service() {
             latLongList!!.add(DataPoint(newLocation.latitude, newLocation.longitude))
         }
         gpsCount++
-        val filtered = filterLocation(newLocation)
         if (isLogging) {
-            if (filtered != null) {
-                //currentSpeed = filtered.speed
-                filterAndAddLocation(newLocation);
-            }
-        } else {
-            // if newLocation passed the filter, count up goodLocationCount.
-//            if (filtered != null) {
-//                goodGpsCount++
-//                if (goodGpsCount > 2) {
-//                    val intent = Intent("GotEnoughLocations")
-//                    intent.putExtra("goodLocationCount", goodGpsCount)Z
-//                    LocalBroadcastManager.getInstance(this.application).sendBroadcast(intent)
-//                }
-//            }
+            filterAndAddLocation(newLocation);
         }
         val intent = Intent("LocationUpdated")
         intent.putExtra("location", newLocation)
@@ -760,19 +692,18 @@ class LocationService : Service() {
     @SuppressLint("NewApi")
     private fun getLocationAge(newLocation: Location): Long {
         val locationAge: Long
-        locationAge =
-            (SystemClock.elapsedRealtimeNanos() / 1000000) - (newLocation.elapsedRealtimeNanos / 1000000)
+        locationAge = System.currentTimeMillis() - newLocation.getTime();
         return locationAge
     }
 
     private fun filterAndAddLocation(location: Location): Boolean {
         val age = getLocationAge(location)
-        if (age > 2 * 1000) { // Change from 10 to 5 seconds, to increase location update frequency
+        if (age > 10 * 1000) { // Change from 10 to 5 seconds, to increase location update frequency
             Log.d(TAG, "Location is old")
             oldLocationList!!.add(location)
             return false
         }
-        if (location.accuracy <= 0) {
+        if (location.accuracy   <= 0) {
             Log.d(TAG, "Latitidue and longitude values are invalid.")
             noAccuracyLocationList!!.add(location)
             return false
@@ -787,7 +718,7 @@ class LocationService : Service() {
         val locationTimeInMillis = (location.getElapsedRealtimeNanos() / 1000000) as Long
         val elapsedTimeInMillis = locationTimeInMillis - runStartTimeInMillis
         Qvalue = if (currentSpeed == 0.0f) {
-            1.0f // Adjust Q value for Kalman filter when speed is 0
+            3.0f // Adjust Q value for Kalman filter when speed is 0
         } else {
             currentSpeed // meters per second
         }
@@ -802,10 +733,10 @@ class LocationService : Service() {
         predictedLocation.setLatitude(predictedLat) //your coords of course
         predictedLocation.setLongitude(predictedLng)
         val predictedDeltaInMeters: Float = predictedLocation.distanceTo(location)
-        if (predictedDeltaInMeters > 90) {
+        if (predictedDeltaInMeters > 60) {
             Log.d(TAG, "Kalman Filter detects mal GPS, we should probably remove this from track")
             kalmanFilter!!.consecutiveRejectCount += 1
-            if (kalmanFilter!!.consecutiveRejectCount > 4) {
+            if (kalmanFilter!!.consecutiveRejectCount > 3) {
                 kalmanFilter =
                     KalmanLatLong(3.0f) //reset Kalman Filter if it rejects more than 3 times in raw.
             }
@@ -845,32 +776,17 @@ class LocationService : Service() {
         lastLocation = location;
         return true
     }
-    private fun filterLocation(location: Location): Location? {
-        val age = getLocationAge(location)
-        if (age > 5 * 1000) { // Change from 10 to 5 seconds, to increase location update frequency
-            Log.d(TAG, "Location is old")
-            oldLocationList!!.add(location)
-            return null
-        }
-        if (location.accuracy <= 0) {
-            Log.d(TAG, "Latitidue and longitude values are invalid.")
-            noAccuracyLocationList!!.add(location)
-            return null
-        }
-        //setAccuracy(newLocation.getAccuracy());
-        val horizontalAccuracy = location.accuracy
-        if (horizontalAccuracy > 100) { // Change from 200 to 100 meters, to increase accuracy
-            Log.d(TAG, "Accuracy is too low.")
-            inaccurateLocationList!!.add(location)
-            return null
-        }
-        Log.d(TAG, "Location quality is good enough.")
-        return location
+
+    private fun stopTTS(){
+        if(!_paused)
+            return;
+        AITextToSpeech!!.PauseTTSpeech();
     }
 
     private val pauseStateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             _paused = intent.getBooleanExtra("isPaused", false)
+            stopTTS();
         }
     }
     private val paceChangeReceiver = object : BroadcastReceiver() {
@@ -884,6 +800,7 @@ class LocationService : Service() {
     private val pauseRequestReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             _paused = !_paused;
+            stopTTS();
         }
     }
 
@@ -891,7 +808,6 @@ class LocationService : Service() {
         override fun onReceive(context: Context, intent: Intent) {
             voiceVolume = intent.getFloatExtra("voiceVolume", 0f)
             footstepVolume = intent.getFloatExtra("footstepVolume", 0f)
-            feedbackVolume = intent.getFloatExtra("feedbackVolume", 0f)
         }
     }
 

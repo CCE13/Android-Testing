@@ -8,7 +8,7 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion 33
     buildToolsVersion '30.0.3'
 
     compileOptions {

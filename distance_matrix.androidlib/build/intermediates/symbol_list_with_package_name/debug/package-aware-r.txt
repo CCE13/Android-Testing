@@ -1158,8 +1158,9 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-id DistanceRan
-id Notification_Text_Header
+font poppins_bold
+id Distance_ran
+id Pace
 id Pause
 id Resume
 id TimeTaken
@@ -1245,6 +1246,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id distance_prefix
 id edit_query
 id end
 id end_padder
@@ -1331,6 +1333,7 @@ id notification_main_column_container
 id off
 id on
 id outline
+id pace_prefix
 id parallax
 id parentPanel
 id parent_matrix
@@ -1402,6 +1405,7 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id time
+id time_prefix
 id title
 id titleDividerNoCustom
 id title_template
@@ -1902,6 +1906,7 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style Dexter_Internal_Theme_Transparent
+style DisplayedData
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -1916,6 +1921,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style PrefixData
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon

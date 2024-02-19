@@ -4,60 +4,60 @@
 4    package="com.abk.gps_forground" >
 5
 6    <uses-sdk android:minSdkVersion="26" />
-6-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml
+6-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml
 7    <!-- Required for foreground services on P+. -->
 8    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-8-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:5:5-81
-8-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:5:22-78
+8-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:5:5-81
+8-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:5:22-78
 9    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-9-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:6:5-79
-9-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:6:22-76
+9-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:6:5-79
+9-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:6:22-76
 10    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-10-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:7:5-77
-10-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:7:22-74
+10-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:7:5-77
+10-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:7:22-74
 11    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-11-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:8:5-81
-11-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:8:22-78
+11-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:8:5-81
+11-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:8:22-78
 12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-12-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:9:5-76
-12-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:9:22-74
+12-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:9:5-76
+12-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:9:22-74
 13    <uses-permission android:name="android.permission.VIBRATE" />
-13-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:10:5-66
-13-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:10:22-63
+13-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:10:5-66
+13-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:10:22-63
 14    <uses-permission android:name="android.permission.WAKE_LOCK" />
-14-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:11:5-68
-14-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:11:22-65
+14-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:11:5-68
+14-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:11:22-65
 15    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-15-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:12:5-75
-15-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:12:22-72
+15-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:12:5-75
+15-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:12:22-72
 16    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-16-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:13:5-78
-16-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:13:22-76
+16-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:13:5-78
+16-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:13:22-76
 17    <uses-permission android:name="android.permission.BODY_SENSORS" />
-17-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:14:5-70
-17-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:14:22-68
+17-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:14:5-70
+17-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:14:22-68
 18
 19    <uses-feature
-19-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:16:5-18:35
+19-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:16:5-18:35
 20        android:name="android.hardware.sensor.accelerometer"
-20-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:17:9-61
+20-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:17:9-61
 21        android:required="true" />
-21-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:18:9-32
+21-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:18:9-32
 22    <uses-feature
-22-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:19:5-21:34
+22-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:19:5-21:34
 23        android:name="android.hardware.sensor.stepcounter"
-23-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:20:9-59
+23-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:20:9-59
 24        android:required="true" />
-24-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:21:9-32
+24-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:21:9-32
 25    <uses-feature
-25-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:22:4-24:33
+25-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:22:4-24:33
 26        android:name="android.hardware.sensor.stepdetector"
-26-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:23:8-59
+26-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:23:8-59
 27        android:required="true" />
-27-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:24:8-31
+27-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:24:8-31
 28
 29    <application>
-29-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:27:5-48:19
+29-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:27:5-48:19
 30
 31        <!-- Foreground services in Q+ require type. -->
 32
@@ -68,27 +68,27 @@
 37        <!-- android:exported="true" -->
 38        <!-- android:process=":different" /> -->
 39        <service
-39-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:35:9-40:44
+39-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:35:9-40:44
 40            android:name="com.abk.distance.services.LocationService"
-40-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:36:13-69
+40-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:36:13-69
 41            android:enabled="true"
-41-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:37:13-35
+41-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:37:13-35
 42            android:exported="true"
-42-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:38:13-36
+42-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:38:13-36
 43            android:foregroundServiceType="location"
-43-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:39:13-53
+43-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:39:13-53
 44            android:process=":different" />
-44-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:40:13-41
+44-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:40:13-41
 45        <service
-45-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:41:9-46:15
+45-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:41:9-46:15
 46            android:name="com.abk.distance.chatgptscript.AiForegroundService"
-46-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:42:13-78
+46-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:42:13-78
 47            android:enabled="true"
-47-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:43:13-35
+47-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:43:13-35
 48            android:exported="true"
-48-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:44:13-36
+48-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:44:13-36
 49            android:foregroundServiceType="dataSync" />
-49-->D:\Android-Testing\distance_matrix.androidlib\src\main\AndroidManifest.xml:45:13-53
+49-->C:\School\Projects\RunAI-LIBGDX\distance_matrix.androidlib\src\main\AndroidManifest.xml:45:13-53
 50    </application>
 51
 52</manifest>
